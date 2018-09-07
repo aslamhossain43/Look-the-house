@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import com.renu.to_let.models.AddService;
+import com.renu.look.house.models.AddService;
 
 public interface AddServiceRepository extends JpaRepository<AddService, Long>,JpaSpecificationExecutor<AddService>{
 	//get by name

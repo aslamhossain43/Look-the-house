@@ -8,7 +8,8 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import com.renu.to_let.models.User;
+import com.renu.look.house.models.User;
+
 
 public interface User_Repository extends JpaRepository<User,Long>,JpaSpecificationExecutor<User>{
 

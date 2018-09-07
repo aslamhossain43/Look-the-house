@@ -1,0 +1,10 @@
+package com.renu.look.house.web.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.renu.look.house.models.User;
+
+
+public interface UserRepository extends JpaRepository<User, Long>{
+  public User findByUsername(String username);
+}
