@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header-css :: header-css(title='Home Page')"></head>
+
+<body>
+<div class="preLoader">	</div> 
+<div th:replace="fragments/nav-bar :: nav-bar"></div>
+<div th:replace="fragments/carousel::carousel"></div>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-10 col-lg-offset-1">
+			<br>
+			<div class="row">
+			<div class=" col-lg-6 col-lg-offset-3">
+				  <br>
+				  <div th:if="${message}">
+              <div th:text="${message}" class="alert alert-info fade in "></div>
+					</div>
+              </div>
+              </div>
+			
+              <br>
+              <div class="row">
+              <div class="col-lg-4 col-lg-offset-4">
+              
+			
+             
+              <h3><i><b>Involved Countries Name</b></i></h3>
+              
+              <hr>
+             
+              <div class="list-group">
+               <div th:each="country:${uniquecountry}" >
+                       
+            <h3> <a class="list-group-item" th:href="@{/view-by-countries?country=__${country}__}" 
+             th:text="${country}"></a> </h3>
+       
+              </div>
+              </div>
+					</div>
+					</div>		
+			
+				<h4 id="b" class="btn btn-primary">Button</h4>
+				<p>This is Home Page</p>
+				<p th:text="${role}"></p>
+			</div>
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		    <div class="row">
+                    
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <a th:href="@{/view-by-categories?rentTypes=Office}">
+                            <img id="rentType"  th:src="@{images/office.jpeg}" alt="">
+                            </a>
+                            <div class="caption">
+                                
+                                <h4><a th:href="@{/view-by-categories?rentTypes=Office}" th:text="Office"></a>
+                                </h4>
+                             
+                           </div>
+                         
+                       
+                    </div>
+                    </div>
+                     
+                            
+                            
+                            
+		
+                     
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <a th:href="@{/view-by-categories?rentTypes=Mess}">
+                            <img id="rentType"  th:src="@{images/mess.jpg}" alt="">
+                            </a>
+                            <div class="caption">
+                                
+                                <h4><a th:href="@{/view-by-categories?rentTypes=Mess}" th:text="Mess"></a>
+                                </h4>
+                             
+                           </div>
+                         
+                       
+                    </div>
+                    </div>
+                      
+                      
+                            
+                            
+                            
+		
+                   
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <a th:href="@{/view-by-categories?rentTypes=Hotel}">
+                            <img id="rentType"  th:src="@{images/hotel.jpeg}" alt="">
+                            </a>
+                            <div class="caption">
+                                
+                                <h4><a th:href="@{/view-by-categories?rentTypes=Hotel}" th:text="Hotel"></a>
+                                </h4>
+                             
+                           </div>
+                         
+                       
+                    </div>
+                    </div>
+   
+                         
+                            
+                         
+                         
+                         
+                         
+       
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <a th:href="@{/view-by-categories?rentTypes=Flat}">
+                            <img id="rentType"  th:src="@{images/flat.jpg}" alt="">
+                            </a>
+                            <div class="caption">
+                                
+                                <h4><a th:href="@{/view-by-categories?rentTypes=Flat}" th:text="Flat"></a>
+                                </h4>
+                             
+                           </div>
+                         
+                       
+                    </div>
+                    </div>
+             
+                    
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <a th:href="@{/view-by-categories?rentTypes=Garage}">
+                            <img id="rentType"  th:src="@{images/garage.jpg}" alt="">
+                            </a>
+                            <div class="caption">
+                                
+                                <h4><a th:href="@{/view-by-categories?rentTypes=Garage}" th:text="Garage"></a>
+                                </h4>
+                             
+                           </div>
+                         
+                       
+                    </div>
+                    </div>
+      
+                           
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <a th:href="@{/view-by-categories?rentTypes=Factory}">
+                            <img id="rentType"  th:src="@{images/factory.jpg}" alt="">
+                            </a>
+                            <div class="caption">
+                                
+                                <h4><a th:href="@{/view-by-categories?rentTypes=Factory}" th:text="Factory"></a>
+                                </h4>
+                             
+                           </div>
+                         
+                       
+                    </div>
+                    </div>
+                
+                           
+                  
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <a th:href="@{/view-by-categories?rentTypes=Plot}">
+                            <img id="rentType"  th:src="@{images/plot.jpg}" alt="">
+                            </a>
+                            <div class="caption">
+                                
+                                <h4><a th:href="@{/view-by-categories?rentTypes=Plot}" th:text="Plot"></a>
+                                </h4>
+                             
+                           </div>
+                         
+                       
+                    </div>
+                    </div>
+                      
+                           
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <a th:href="@{/view-by-categories?rentTypes=Commercial-space}">
+                            <img id="rentType"  th:src="@{images/commercial-space.jpg}" alt="">
+                            </a>
+                            <div class="caption">
+                                
+                                <h4><a th:href="@{/view-by-categories?rentTypes=Commercial-space}" th:text="Commercial-space"></a>
+                                </h4>
+                             
+                           </div>
+                         
+                       
+                    </div>
+                    </div>
+                
+                          
+                  
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <a th:href="@{/view-by-categories?rentTypes=Others}">
+                            <img id="rentType"  th:src="@{images/others.jpeg}" alt="">
+                            </a>
+                            <div class="caption">
+                                
+                                <h4><a th:href="@{/view-by-categories?rentTypes=Others}" th:text="Others"></a>
+                                </h4>
+                             
+                           </div>
+                         
+                       
+                    </div>
+                    </div>
+                
+                            </div>
+                            
+                            
+                            
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+<div th:replace="fragments/footer-js::footer-js"></div>
+
+</body>
+
+</html>

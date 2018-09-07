@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header-css :: header-css"></head>
+
+<body>
+<div class="preLoader">	</div> 
+<div th:replace="fragments/nav-bar :: nav-bar"></div>
+
+	<div class="container">
+		<div class="row">
+				 
+			<div class="col-md-12">
+
+							
+			<h2 th:text="${title}"></h2>
+				<h4 id="b" class="btn btn-primary">Button</h4>
+				<p>This is about Page</p>
+			</div>
+		</div>
+	</div>
+<div th:replace="fragments/footer-js::footer-js"></div>
+
+</body>
+
+</html>

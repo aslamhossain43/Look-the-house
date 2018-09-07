@@ -1,0 +1,114 @@
+
+ <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" xmlns:th="http://www.thymeleaf.org" 
+ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4" th:fragment="nav-bar">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+       
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav navbar-left">
+                    <li id="home"><a th:href="@{/}">Home</a>
+                    </li>
+                     <li id="about"><a th:href="@{/about}">About</a>
+                    </li>
+                     <li id="addservices"><a th:href="@{/showAddservice}">Add Services</a>
+                    </li>
+                    <li id="viewservices"><a th:href="@{/view-services}"> View Services</a>
+                    </li>
+                    
+                   
+                    <li><a href="contact.php">Contact</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="portfolio-1-col.html">1 Column Portfolio</a>
+                            </li>
+                            <li><a href="portfolio-2-col.html">2 Column Portfolio</a>
+                            </li>
+                            <li><a href="portfolio-3-col.html">3 Column Portfolio</a>
+                            </li>
+                            <li><a href="portfolio-4-col.html">4 Column Portfolio</a>
+                            </li>
+                            <li><a href="portfolio-item.html">Single Portfolio Item</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="blog-home-1.html">Blog Home 1</a>
+                            </li>
+                            <li><a href="blog-home-2.html">Blog Home 2</a>
+                            </li>
+                            <li><a href="blog-post.html">Blog Post</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other Pages <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="full-width.html">Full Width Page</a>
+                            </li>
+                            <li><a href="sidebar.html">Sidebar Page</a>
+                            </li>
+                            <li><a href="faq.html">FAQ</a>
+                            </li>
+                            <li><a href="404.html">404</a>
+                            </li>
+                            <li><a href="pricing.html">Pricing Table</a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </ul>
+                 <ul class="nav navbar-nav navbar-right">
+                <!-- by using this after login this part will be vanish -->
+              
+                <li id="registration"><a th:href="@{/registration}">Sign Up</a></li>
+                <li id="login"><a th:href="@{/login}" sec:authorize="isAnonymous()">Login</a></li>
+            
+               
+               <li class="dropdown">
+                <div sec:authorize="isAuthenticated()"> 
+               <a class="btn btn-warning dropdown-toggle" href="javascript:void(0)"
+                data-toggle="dropdown"  th:text=" ${authorityname}" >
+              <span class="caret"></span>
+               
+               </a>
+               <ul class="dropdown-menu">
+               <li>
+              <a th:href="@{/logout}" class="btn btn-warning"> Sign out</a>
+               </li>
+               
+               </ul>
+              
+               </div> 
+              </li>
+            
+                </ul>
+                    
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+
+
+
+

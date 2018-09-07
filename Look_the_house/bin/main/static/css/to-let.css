@@ -1,0 +1,104 @@
+
+/* for preLoader*/
+.preLoader{
+position:fixed;
+left:0;
+top:0;
+width:100%;
+height:100%;
+z-index:9999;
+background:url(../images/pre-loader.gif)50% no-repeat #fff
+
+
+}
+
+
+
+
+  #rentType{
+      width:340px;
+      height: 160px;
+ 
+  }
+  #vsvideo{
+  width:220px;
+  height:130px;
+  }
+ #vsimg{
+  width:220px;
+  height:130px;
+  }
+#dbtn{
+margin-left:15px;
+margin-top:20px;
+margin-bottom:20px;
+}
+/*for angular js */
+input.ng-invalid{
+background-color:pink;
+}
+input.ng-valid{
+background-color:lightgreen;
+}
+textarea.ng-invalid{
+background-color:pink;
+}
+textarea.ng-valid{
+background-color:lightgreen;
+}
+
+p{
+
+color:red;
+}
+select.ng-invalid{
+background-color:pink;
+}
+select.ng-valid{
+background-color:lightgreen;
+}
+#serviceAlert{
+color:red;
+}
+#addServiceValidation{
+font-style:italic;
+font-size:15px;
+
+}
+#rentTypes{
+background-color:pink;
+}
+
+#image{
+background-color:pink;
+}
+#video{
+background-color:pink;
+}
+#serviceCountry{
+background-color:pink;
+}
+#district{
+background-color:pink;
+}
+#subDistrict{
+background-color:pink;
+}
+#detailsAddress{
+background-color:pink;
+}
+#serviceDescription{
+background-color:pink;
+}
+#contact{
+background-color:pink;
+}
+#characters{
+background-color:pink;
+}
+
+
+
+
+
+

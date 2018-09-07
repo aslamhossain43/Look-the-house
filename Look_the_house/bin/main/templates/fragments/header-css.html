@@ -1,0 +1,40 @@
+
+<head  xmlns:th="http://www.thymeleaf.org" th:fragment="header-css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ 
+   
+   
+     
+ <link rel="stylesheet" href="css/carousel.css"
+	th:href="@{/css/modern-business.css}" />
+	<link rel="stylesheet" href="css/to-let.css"
+	th:href="@{/css/to-let.css}" />
+	
+
+<link rel="stylesheet"	th:href="@{webjars/bootstrap/3.1.1/css/bootstrap.min.css}" />
+	
+	<link rel="stylesheet" type="text/css" th:href="@{webjars/datatables/1.10.19/media/css/jquery.dataTables.min.css}"/>
+   <link rel="stylesheet" type="text/css"  th:href="@{webjars/datatables/1.10.19/media/css/dataTables.bootstrap.min.css}"/>
+
+	
+	
+	
+	
+	
+	<title th:text="${title}"></title>
+	
+	 
+		 <script type="text/javascript">
+	      
+  window.menu='[[${title}]]';
+  window.jsonurl='[[${jsonurl}]]';
+window.userRole='[[${role}]]';	
+	</script>
+	
+	
+	
+</head>
+
+

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header-css :: header-css"></head>
+
+<body  data-ng-app="">
+<div class="preLoader">	</div> 
+	<div th:replace="fragments/nav-bar :: nav-bar"></div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-6 col-lg-offset-3">
+        
+        
+        <br>
+<div th:if="${message}">
+<div class="row">
+<div class="col-md-8 col-md-offset-2">
+<div class="alert alert-info fade in" th:text="${message}"></div>
+</div>
+</div>
+</div>
+      
+        
+        
+              <br>
+              <div th:if="${logout}" class="alert alert-info fade in">You have been logged out successfully</div>
+			 <div th:if="${error}" class="alert alert-info fade in">Invalid username and password.</div>
+					
+              <br>
+
+
+                 <fieldset>
+				<form name="myForm" class="form-horizontal" role="form" th:action="@{/login}" method="post">
+
+					<div class="form-group">
+						<label for="email" class="col-lg-2 control-label">Email:</label>
+						<div class="col-lg-8">
+
+							<input type="email" class="form-control"  name="username" data-ng-model="username" required 
+							 id="email" placeholder="Enter Email" autocomplete="off">
+							 <p data-ng-show="myForm.username.$touched&&myForm.username.$invalid"><i>Valid email is required</i></p>
+
+
+						</div>
+					</div>
+                       
+
+					<div class="form-group">
+			       <label for="password" class="col-lg-2  control-label">Password:</label>
+						<div class="col-lg-8">
+							<input type="password" class="form-control"
+							 name="password" data-ng-model="password" required id="password"   placeholder="Enter Password"  autocomplete="off">
+                        <p data-ng-show="myForm.password.$touched&&myForm.password.$invalid"><i>Valid password is required</i></p>
+                        						
+						</div>
+					</div>
+                  
+                  
+                  
+					<div class="forn-group">
+						<div class="col-lg-2 col-lg-offset-2">
+							<button type="submit" 
+							data-ng-disabled="myForm.username.$touched&&myForm.username.$invalid
+							||myForm.password.$touched&&myForm.password.$invalid" class="btn btn-primary">Submit</button>
+						</div>
+					</div>
+                     
+				</form>
+				</fieldset>
+						
+						<a id="fp" href="/show-email-word" class="col-lg-4 col-lg-offset-4"> Forgotten Password ?</a>
+			
+				   
+						<a id="nr" href="/registration" class="col-lg-4 col-lg-offset-6"> New Registration ?</a>
+			
+			
+
+                   
+			</div>
+		
+		</div>
+		
+	</div>
+	<div th:replace="fragments/footer-js::footer-js"></div>
+</body>
+</html>
