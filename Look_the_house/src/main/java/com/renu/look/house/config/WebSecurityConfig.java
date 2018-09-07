@@ -37,13 +37,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests().antMatchers("/webjars/**", "/css/**", "/js/**", "/images/**").permitAll();
 
 		http.authorizeRequests()
-				.antMatchers("/", "/register/**", "/showAddservice/", "/addservices/", "/view-by-categories/**",
+				.antMatchers("/", "/register/**", "/showAddservice/",
 						"/json-category/**", "/view-by-categories-countries/**", "/json-country-category/**","/show-email-word/**"
-						,"/send-email-word/**","/reset-password/**")
+						,"/send-email-word/**","/reset-password/**","/view-by-categories/**", "/view-by-countries/**")
 				.permitAll();
 		http.authorizeRequests().antMatchers("/delete/**", "/updateAddservice/**").hasAuthority("ADMIN");
 		http.authorizeRequests().antMatchers("/user/**").hasAuthority("USER");
-		http.authorizeRequests().antMatchers("/updateAddserviceByUser/**","/view-services/**","/update-word/**").hasAnyAuthority("ADMIN","USER")
+		http.authorizeRequests().antMatchers("/updateAddserviceByUser/**","/update-word/**", "/addservices/**","/view-services/**").hasAnyAuthority("ADMIN","USER")
 		.anyRequest().authenticated().and()
 				.formLogin().loginPage("/login").successHandler(new CustomAuthenticationSuccess())
 				.failureHandler(new CustomAuthenticationFailure()).permitAll().and().logout().permitAll().and()

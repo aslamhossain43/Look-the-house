@@ -128,19 +128,8 @@ if(table.length){
 	  ,
 	  {
 		  
-		  data:'lastModifiedDate',
-		  mRender:function(data){
-			  				
-			  var str='';
-					 if (userRole=='USER'|| userRole=='ADMIN') {
-						 	str+=data;
-			              return str;
-			              }					
-							
-			 
-			  
-			  
-		  }
+		  data:'lastModifiedDate'
+		 
 		 
 	  }
 	  ,
@@ -163,7 +152,9 @@ if(table.length){
 				             
 						return str;
 					}
-			  
+											
+			  return str;
+			
 			  
 		  }
 		 
