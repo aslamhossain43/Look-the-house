@@ -17,14 +17,13 @@
 <br>
 <div th:if="${message}">
 <div class="row">
-<div class="col-md-8 col-md-offset-2">
+<div class="col-md-8 col-md-offset-3">
 <div class="alert alert-info fade in" th:text="${message}"></div>
 </div>
 </div>
 </div>
-<hr>
 <div class="row">
-<div class="col-md-8 col-md-offset-2">
+<div class="col-md-8 col-md-offset-3">
 <h3 id="serviceAlert"><i>After every month your services must be truncated by admin !!!</i></h3>
 </div>
 </div>
@@ -84,6 +83,8 @@ th:object="${services}" method="post" enctype="multipart/form-data">
 <label for="video" class="col-lg-3 control-label">Upload a video(optional) : </label>
 <div class="col-lg-8">
 <input type="file" class="form-control" id="video" th:field="*{vFile}" autocomplete="off">
+<p id="addServiceValidation" th:if="${#fields.hasErrors('vFile')}" th:errors="*{vFile}"></p>
+
 </div>
 </div>
 

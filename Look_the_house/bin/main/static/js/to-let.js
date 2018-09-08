@@ -183,7 +183,7 @@ if(alert.length){
 		alert.fadeOut("slow");
 		
 		
-	},5000);
+	},15000);
 	
 }
 

@@ -6,6 +6,8 @@ import javax.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -15,9 +17,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.renu.look.house.models.AddService;
+import com.renu.look.house.models.User;
 import com.renu.look.house.repository.AddServiceRepository;
+import com.renu.look.house.repository.User_Repository;
 import com.renu.look.house.utility.FileUploadUtility;
-import com.renu.look.house.validator.FileValidator;
+import com.renu.look.house.validator.ImageFileValidator;
+import com.renu.look.house.validator.VideoFileValidator;
 
 @Controller
 public class ServiceController {
@@ -25,7 +30,8 @@ public class ServiceController {
 	private static final Logger LOGGER=LoggerFactory.getLogger(ServiceController.class);
 	@Autowired
 	private AddServiceRepository addServiceRepository;
-	
+	@Autowired
+	private User_Repository user_Repository;
 	@RequestMapping(value="/showAddservice")
 	public String showAddService(Model model) {
 		LOGGER.info("From showService method");
@@ -78,17 +84,23 @@ public class ServiceController {
 	@RequestMapping(value="/addservices",method=RequestMethod.POST)
 	public String addService(@Valid @ModelAttribute("services") AddService services,BindingResult bindingResult,
 		    Model model,HttpServletRequest vRequest,HttpServletRequest iRequest) {
-		LOGGER.info("From addService method");
-		
-			new FileValidator().validate(services, bindingResult);
-		
+		LOGGER.info("From Class : ServiceController,method : addService()");
+			new VideoFileValidator().validate(services, bindingResult);
+		    new ImageFileValidator().validate(services, bindingResult);
 		
 		if (bindingResult.hasErrors()) {
 			model.addAttribute("message", "Your operation has not been completed successfully !!!");
 			return "add-services";
 		}
 
-		
+		Authentication authentication=SecurityContextHolder.getContext().getAuthentication();
+		String email=authentication.getName();
+		User user=user_Repository.getByUsername(email);
+		LOGGER.info("Getting email : "+email);
+		if (!services.getWord().equals(user.getWord())) {
+			model.addAttribute("message","Your characters or symbol not matching which you added during registration !");
+		return "add-services";
+		}
 		addServiceRepository.save(services);
 		if (!services.getvFile().getOriginalFilename().equals("")) {
 			FileUploadUtility.videoUploadFile(vRequest, services.getvFile(), services.getvCode());
