@@ -12,18 +12,18 @@
 
 <div class="container-fluid">
 <div class="row">
-<div class="col-lg-10 col-lg-offset-1">
+<div class=" col-xs-10 col-xs-offset-1  col-sm-10 col-sm-offset-1  col-md-10 col-md-offset-1  col-lg-10 col-lg-offset-1">
 
 <br>
 <div th:if="${message}">
 <div class="row">
-<div class="col-md-8 col-md-offset-3">
+<div class=" col-xs-8 col-xs-offset-3  col-sm-8 col-sm-offset-3  col-md-8 col-md-offset-3  col-lg-8 col-lg-offset-3 ">
 <div class="alert alert-info fade in" th:text="${message}"></div>
 </div>
 </div>
 </div>
 <div class="row">
-<div class="col-md-8 col-md-offset-3">
+<div class="col-xs-8 col-xs-offset-3  col-sm-8 col-sm-offset-3  col-md-8 col-md-offset-3  col-lg-8 col-lg-offset-3 ">
 <h3 id="serviceAlert"><i>After every month your services must be truncated by admin !!!</i></h3>
 </div>
 </div>
@@ -40,7 +40,7 @@ th:object="${services}" method="post" enctype="multipart/form-data">
 
 <div class="form-group">
 <label for="id" class="col-lg-2 control-label"></label>
-<div class="col-lg-8">
+<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
 <input type="hidden" class="form-control" id="id" th:field="*{id}" th:value="${services.id}" placeholder=" Upload a video" autocomplete="off">
 </div>
 </div>
@@ -49,8 +49,8 @@ th:object="${services}" method="post" enctype="multipart/form-data">
 
 
 <div class="form-group blu-margin">
-<label for="rentTypes" class="col-lg-3 control-label">Rent Type : </label>
-<div class="col-lg-8">
+<label for="rentTypes" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 control-label">Rent Type : </label>
+<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ">
 <select class="form-control" id="rentTypes" name="rentType" th:with="rentType=*{rentType}" >
 
  <option value="" disabled="disabled" selected="selected">Choose a rent type</option>
@@ -80,8 +80,8 @@ th:object="${services}" method="post" enctype="multipart/form-data">
 
 
 <div class="form-group">
-<label for="video" class="col-lg-3 control-label">Upload a video(optional) : </label>
-<div class="col-lg-8">
+<label for="video" class="col-xs-3 col-sm-3 col-md-3 col-lg-3   control-label">Upload a video(optional) : </label>
+<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ">
 <input type="file" class="form-control" id="video" th:field="*{vFile}" autocomplete="off">
 <p id="addServiceValidation" th:if="${#fields.hasErrors('vFile')}" th:errors="*{vFile}"></p>
 
@@ -89,8 +89,8 @@ th:object="${services}" method="post" enctype="multipart/form-data">
 </div>
 
 <div class="form-group">
-<label for="image" class="col-lg-3 control-label">Upload an image(mandatory) : </label>
-<div class="col-lg-8">
+<label for="image" class="col-xs-3 col-sm-3 col-md-3 col-lg-3  control-label">Upload an image(mandatory) : </label>
+<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ">
 <input type="file" class="form-control" id="image" th:field="*{iFile}" autocomplete="off">
 <p id="addServiceValidation" th:if="${#fields.hasErrors('iFile')}" th:errors="*{iFile}"></p>
 
@@ -100,8 +100,8 @@ th:object="${services}" method="post" enctype="multipart/form-data">
 
 
 <div class="form-group">
-<label for="serviceCountry" class="col-lg-3 control-label">Country Name : </label>
-<div class="col-lg-8">
+<label for="serviceCountry" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 control-label">Country Name : </label>
+<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ">
 <input type="text" class="form-control" id="serviceCountry"  th:field="*{country}" 
 th:value="${services.country}" placeholder=" Enter Country Name" autocomplete="off">
 <p id="addServiceValidation" th:if="${#fields.hasErrors('country')}" th:errors="*{country}"></p>
@@ -111,8 +111,8 @@ th:value="${services.country}" placeholder=" Enter Country Name" autocomplete="o
 
 
 <div class="form-group">
-<label for="district" class="col-lg-3 control-label">District Name : </label>
-<div class="col-lg-8">
+<label for="district" class="col-xs-3 col-sm-3 col-md-3 col-lg-3  control-label">District Name : </label>
+<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ">
 <input type="text" class="form-control" id="district" th:field="*{district}" 
 th:value="${services.district}" placeholder=" Enter District Name" autocomplete="off">
 <p id="addServiceValidation" th:if="${#fields.hasErrors('district')}" th:errors="*{district}"></p>
@@ -122,8 +122,8 @@ th:value="${services.district}" placeholder=" Enter District Name" autocomplete=
 
 
 <div class="form-group">
-<label for="subDistrict" class="col-lg-3 control-label">Sub-District Name : </label>
-<div class="col-lg-8">
+<label for="subDistrict" class="col-xs-3 col-sm-3 col-md-3 col-lg-3  control-label">Sub-District Name : </label>
+<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ">
 <input type="text" class="form-control" id="subDistrict" th:field="*{subDistrict}"
 th:value="${services.subDistrict}" placeholder=" Enter Sub -District Name" autocomplete="off">
 <p id="addServiceValidation" th:if="${#fields.hasErrors('subDistrict')}" th:errors="*{subDistrict}"></p>
@@ -133,8 +133,8 @@ th:value="${services.subDistrict}" placeholder=" Enter Sub -District Name" autoc
 
 
 <div class="form-group">
-<label for="detailsAddress" class="col-lg-3 control-label">Details Address : </label>
-<div class="col-lg-8">
+<label for="detailsAddress" class="col-xs-3 col-sm-3 col-md-3 col-lg-3  control-label">Details Address : </label>
+<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ">
 <input type="text" class="form-control" id="detailsAddress" th:field="*{detailsAddress}" 
 th:value="${services.detailsAddress}" placeholder=" Enter Details Address" autocomplete="off">
 <p id="addServiceValidation" th:if="${#fields.hasErrors('detailsAddress')}" th:errors="*{detailsAddress}"></p>
@@ -145,8 +145,8 @@ th:value="${services.detailsAddress}" placeholder=" Enter Details Address" autoc
 
 
 <div class="form-group">
-<label for="serviceDescription" class="col-lg-3 control-label">service Description : </label>
-<div class="col-lg-8">
+<label for="serviceDescription" class="col-xs-3 col-sm-3 col-md-3 col-lg-3  control-label">service Description : </label>
+<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ">
 <input type="text" class="form-control" id="serviceDescription" th:field="*{serviceDescription}" 
 th:value="${services.serviceDescription}" placeholder=" Enter Service Description" autocomplete="off">
 <p id="addServiceValidation" th:if="${#fields.hasErrors('serviceDescription')}" th:errors="*{serviceDescription}"></p>
@@ -156,8 +156,8 @@ th:value="${services.serviceDescription}" placeholder=" Enter Service Descriptio
 
 
 <div class="form-group">
-<label for="contact" class="col-lg-3 control-label">Contact  : </label>
-<div class="col-lg-8">
+<label for="contact" class="col-xs-3 col-sm-3 col-md-3 col-lg-3  control-label">Contact  : </label>
+<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ">
 <input type="text" class="form-control" id="contact" th:field="*{contact}" 
 th:value="${services.contact}" placeholder=" Enter Contact" autocomplete="off">
 <p id="addServiceValidation" th:if="${#fields.hasErrors('contact')}" th:errors="*{contact}"></p>
@@ -166,8 +166,8 @@ th:value="${services.contact}" placeholder=" Enter Contact" autocomplete="off">
 </div>
 
 <div class="form-group">
-<label for="characters" class="col-lg-3 control-label">Enter characters or symbol which added during registration  : </label>
-<div class="col-lg-8">
+<label for="characters" class="col-xs-3 col-sm-3 col-md-3 col-lg-3  control-label">Enter characters or symbol which added during registration  : </label>
+<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
 <input type="text" class="form-control" id="characters" th:field="*{word}" 
 th:value="${services.word}" placeholder=" Enter a word which you added during registration" autocomplete="off">
 <p id="addServiceValidation" th:if="${#fields.hasErrors('word')}" th:errors="*{word}"></p>
@@ -179,7 +179,7 @@ th:value="${services.word}" placeholder=" Enter a word which you added during re
 
 
 <div class="forn-group">
-<div class="col-lg-2 col-lg-offset-6">
+<div class="col-xs-2 col-xs-offset-6  col-sm-2 col-sm-offset-6  col-md-2 col-md-offset-6  col-lg-2 col-lg-offset-6">
 <button type="submit" class="btn btn-primary">Submit</button>
 </div>
 </div>

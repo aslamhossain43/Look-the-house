@@ -16,17 +16,17 @@ background:url(../images/pre-loader.gif)50% no-repeat #fff
 
 
   #rentType{
-      width:340px;
-      height: 160px;
+      width:100%;
+      height: auto;
  
   }
   #vsvideo{
   width:220px;
-  height:130px;
+  height:150px;
   }
  #vsimg{
   width:220px;
-  height:130px;
+  height:150px;
   }
 #dbtn{
 margin-left:15px;

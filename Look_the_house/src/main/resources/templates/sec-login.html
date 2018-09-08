@@ -7,13 +7,13 @@
 	<div th:replace="fragments/nav-bar :: nav-bar"></div>
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-lg-6 col-lg-offset-3">
+			<div class=" col-xs-6 col-xs-offset-3  col-sm-6 col-sm-offset-3  col-md-6 col-md-offset-3  col-lg-6 col-lg-offset-3 ">
         
         
         <br>
 <div th:if="${message}">
 <div class="row">
-<div class="col-md-8 col-md-offset-2">
+<div class=" col-xs-8 col-xs-offset-2  col-sm-8 col-sm-offset-2  col-md-8 col-md-offset-2  col-lg-8 col-lg-offset-2 ">
 <div class="alert alert-info fade in" th:text="${message}"></div>
 </div>
 </div>
@@ -32,7 +32,7 @@
 				<form name="myForm" class="form-horizontal" role="form" th:action="@{/login}" method="post">
 
 					<div class="form-group">
-						<label for="email" class="col-lg-2 control-label">Email:</label>
+						<label for="email" class="col-xs-2 col-sm-2 col-md-2 col-lg-2 control-label">Email:</label>
 						<div class="col-lg-8">
 
 							<input type="email" class="form-control"  name="username" data-ng-model="username" required 
@@ -45,7 +45,7 @@
                        
 
 					<div class="form-group">
-			       <label for="password" class="col-lg-2  control-label">Password:</label>
+			       <label for="password" class="col-xs-2 col-sm-2 col-md-2 col-lg-2  control-label">Password:</label>
 						<div class="col-lg-8">
 							<input type="password" class="form-control"
 							 name="password" data-ng-model="password" required id="password"   placeholder="Enter Password"  autocomplete="off">
@@ -57,7 +57,7 @@
                   
                   
 					<div class="forn-group">
-						<div class="col-lg-2 col-lg-offset-2">
+						<div class=" col-xs-2 col-xs-offset-2  col-sm-2 col-sm-offset-2  col-md-2 col-md-offset-2  col-lg-2 col-lg-offset-2 ">
 							<button type="submit" 
 							data-ng-disabled="myForm.username.$touched&&myForm.username.$invalid
 							||myForm.password.$touched&&myForm.password.$invalid" class="btn btn-primary">Submit</button>
@@ -67,10 +67,10 @@
 				</form>
 				</fieldset>
 						
-						<a id="fp" href="/show-email-word" class="col-lg-4 col-lg-offset-4"> Forgotten Password ?</a>
+						<a id="fp" href="/show-email-word" class=" col-xs-4 col-xs-offset-4  col-sm-4 col-sm-offset-4  col-md-4 col-md-offset-4  col-lg-4 col-lg-offset-4 "> Forgotten Password ?</a>
 			
 				   
-						<a id="nr" href="/registration" class="col-lg-4 col-lg-offset-6"> New Registration ?</a>
+						<a id="nr" href="/registration" class=" col-xs-4 col-xs-offset-6  col-sm-4 col-sm-offset-6  col-md-4 col-md-offset-6  col-lg-4 col-lg-offset-6 "> New Registration ?</a>
 			
 			
 

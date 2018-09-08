@@ -21,7 +21,7 @@
                     </li>
                      <li id="addservices"><a th:href="@{/showAddservice}">Add Services</a>
                     </li>
-                    <li sec:authorize="hasAuthority('ADMIN')" id="viewservices"><a th:href="@{/view-services}"> View Services</a>
+                    <li sec:authorize="isAuthenticated()" id="viewservices"><a th:href="@{/view-services}"> View Services</a>
                     </li>
                     
                    
