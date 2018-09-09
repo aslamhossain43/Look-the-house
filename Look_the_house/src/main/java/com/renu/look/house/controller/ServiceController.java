@@ -85,8 +85,11 @@ public class ServiceController {
 	public String addService(@Valid @ModelAttribute("services") AddService services,BindingResult bindingResult,
 		    Model model,HttpServletRequest vRequest,HttpServletRequest iRequest) {
 		LOGGER.info("From Class : ServiceController,method : addService()");
+		   if (services.getId()==0L) {
+			
 			new VideoFileValidator().validate(services, bindingResult);
 		    new ImageFileValidator().validate(services, bindingResult);
+		   }
 		
 		if (bindingResult.hasErrors()) {
 			model.addAttribute("message", "Your operation has not been completed successfully !!!");
@@ -101,12 +104,16 @@ public class ServiceController {
 			model.addAttribute("message","Your characters or symbol not matching which you added during registration !");
 		return "add-services";
 		}
-		addServiceRepository.save(services);
 		if (!services.getvFile().getOriginalFilename().equals("")) {
 			FileUploadUtility.videoUploadFile(vRequest, services.getvFile(), services.getvCode());
 		}
 		if (!services.getiFile().getOriginalFilename().equals("")) {
 			FileUploadUtility.imageUploadFile(iRequest, services.getiFile(),services.getiCode());
+		}
+		if (services.getId()==0L) {
+			
+			addServiceRepository.save(services);	
+			services.setId(0L);
 		}
 		
 		model.addAttribute("message", "Your operation has been completed successfully !!!");
