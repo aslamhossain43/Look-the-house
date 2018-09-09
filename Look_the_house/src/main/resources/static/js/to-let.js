@@ -142,13 +142,13 @@ if(table.length){
 		
 					if (userRole=='ADMIN') {
 						
-			  str+='<a href="/updateAddservice?id='+data+'" id="dbtn" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></a>';
+			  str+='<a href="/updateAddservice?id='+data+'" id="editTrauncate" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></a>';
                 
 						
-					str+='<a href="/delete?id='+data+'" id="dbtn" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>';
+					str+='<a href="/delete?id='+data+'" id="editTrauncate" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>';
 					return str;
 					}if (userRole=='USER') {
-						  str+='<a href="/showUpdateWordByUser?id='+data+'" id="dbtn" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></a>';
+						  str+='<a href="/showUpdateWordByUser?id='+data+'" id="editTrauncate" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></a>';
 				             
 						return str;
 					}

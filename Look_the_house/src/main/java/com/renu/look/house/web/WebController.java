@@ -4,6 +4,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -22,6 +24,7 @@ import com.renu.look.house.web.service.UserService;
 
 @Controller
 public class WebController {
+	private static final Logger LOGGER=LoggerFactory.getLogger(WebController.class);
 	@Autowired
 	UserService userService;
 
@@ -71,6 +74,9 @@ public class WebController {
 	@RequestMapping(value = "/registration", method = RequestMethod.POST)
 	public String registration(@Valid @ModelAttribute("userform") User userform, BindingResult bindingResult, Model model,
 			String[] roles) {
+		LOGGER.info("From class : WebController, method : registration()");
+		LOGGER.info("Getting password : "+userform.getPassword());
+		LOGGER.info("Getting confirmPassword : "+userform.getConfirmPassword());
 		if (bindingResult.hasErrors()) {
 			model.addAttribute("message", "Your Registration has not been completed successfully !!!");
 			return "sec-registration";

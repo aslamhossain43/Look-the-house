@@ -28,7 +28,7 @@ background:url(../images/pre-loader.gif)50% no-repeat #fff
   width:220px;
   height:150px;
   }
-#dbtn{
+#editTrauncate{
 margin-left:15px;
 margin-top:20px;
 margin-bottom:20px;
@@ -97,8 +97,10 @@ background-color:pink;
 background-color:pink;
 }
 
-
-
-
-
+#involveCountryName{
+fint-size:5vw;
+}
+#countryNames{
+fint-size:5vw;
+}
 

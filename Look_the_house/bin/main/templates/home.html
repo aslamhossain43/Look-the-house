@@ -27,14 +27,14 @@
               
 			
              
-              <h3><i><b>Involved Countries Name</b></i></h3>
+              <h3 id="involveCountryName"><i><b>Involved Countries Name</b></i></h3>
               
               <hr>
              
               <div class="list-group">
                <div th:each="country:${uniquecountry}" >
                        
-            <h3> <a class="list-group-item" th:href="@{/view-by-countries?country=__${country}__}" 
+            <h3 id="countryNames"> <a class="list-group-item" th:href="@{/view-by-countries?country=__${country}__}" 
              th:text="${country}"></a> </h3>
        
               </div>
@@ -42,9 +42,6 @@
 					</div>
 					</div>		
 			
-				<h4 id="b" class="btn btn-primary">Button</h4>
-				<p>This is Home Page</p>
-				<p th:text="${role}"></p>
 			</div>
 		</div>
 		

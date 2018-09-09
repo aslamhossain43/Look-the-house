@@ -53,7 +53,7 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <div class="form-group">
 <label for="password" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 control-label">Password : </label>
 <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
-<input type="password" class="form-control" id="password" th:name="*{password}" data-ng-model="password" required placeholder=" Enter Password" autocomplete="off">
+<input type="password" class="form-control" id="password" th:field="*{password}" data-ng-model="password" required placeholder=" Enter Password" autocomplete="off">
 <p data-ng-show="userForm.password.$touched&&userForm.password.$invalid"><i>Password is required</i></p>
 
 </div>
