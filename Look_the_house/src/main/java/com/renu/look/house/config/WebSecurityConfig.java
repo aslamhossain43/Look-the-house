@@ -31,19 +31,20 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 
-		http.authorizeRequests().antMatchers("/resources/**", "/loginError", "/registration")
+		http.authorizeRequests().antMatchers("/resources/**")
 
 				.permitAll();
 		http.authorizeRequests().antMatchers("/webjars/**", "/css/**", "/js/**", "/images/**").permitAll();
 
 		http.authorizeRequests()
-				.antMatchers("/", "/register/**","/showAddservice/",
+				.antMatchers("/", "/register/**",
 						"/json-category/**", "/view-by-categories-countries/**", "/json-country-category/**","/show-email-word/**"
-						,"/send-email-word/**","/reset-password/**","/view-by-categories/**", "/view-by-countries/**")
+						,"/send-email-word/**","/reset-password/**","/view-by-categories/**", "/view-by-countries/**"
+						, "/loginError", "/registration","/about/**")
 				.permitAll();
 		http.authorizeRequests().antMatchers("/delete/**", "/updateAddservice/**").hasAuthority("ADMIN");
 		http.authorizeRequests().antMatchers("/user/**").hasAuthority("USER");
-		http.authorizeRequests().antMatchers("/updateAddserviceByUser/**","/update-word/**", "/addservices/**","/view-services/**").hasAnyAuthority("ADMIN","USER")
+		http.authorizeRequests().antMatchers("/updateAddserviceByUser/**","/update-word/**", "/showAddservice/**","/view-services/**").hasAnyAuthority("ADMIN","USER")
 		.anyRequest().authenticated().and()
 				.formLogin().loginPage("/login").successHandler(new CustomAuthenticationSuccess())
 				.failureHandler(new CustomAuthenticationFailure()).permitAll().and().logout().permitAll().and()

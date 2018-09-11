@@ -15,7 +15,7 @@
 			<div class=" col-xs-6 col-xs-offset-3  col-sm-6 col-sm-offset-3  col-md-6 col-md-offset-3  col-lg-6 col-lg-offset-3 ">
 				  <br>
 				  <div th:if="${message}">
-              <div th:text="${message}" class="alert alert-info fade in "></div>
+              <div id="textCenter" th:text="${message}" class="alert alert-info fade in "></div>
 					</div>
               </div>
               </div>
@@ -26,14 +26,14 @@
               
 			
              
-              <h3 id="involveCountryName"><i><b>Involved Countries Name</b></i></h3>
+              <h3 id="textCenter"><i><b>Involved Countries Name</b></i></h3>
               
               <hr>
              
               <div class="list-group">
                <div th:each="country:${uniquecountry}" >
                        
-            <h3 id="countryNames"> <a class="list-group-item" th:href="@{/view-by-countries?country=__${country}__}" 
+            <h3 id="textCenter"> <a class="list-group-item" th:href="@{/view-by-countries?country=__${country}__}" 
              th:text="${country}"></a> </h3>
        
               </div>
@@ -60,7 +60,7 @@
                             </a>
                             <div class="caption">
                                 
-                                <h4><a th:href="@{/view-by-categories?rentTypes=Office}" th:text="Office"></a>
+                                <h4 id="textCenter"><a th:href="@{/view-by-categories?rentTypes=Office}" th:text="Office"></a>
                                 </h4>
                              
                            </div>
@@ -81,7 +81,7 @@
                             </a>
                             <div class="caption">
                                 
-                                <h4><a th:href="@{/view-by-categories?rentTypes=Mess}" th:text="Mess"></a>
+                                <h4 id="textCenter"><a th:href="@{/view-by-categories?rentTypes=Mess}" th:text="Mess"></a>
                                 </h4>
                              
                            </div>
@@ -103,7 +103,7 @@
                             </a>
                             <div class="caption">
                                 
-                                <h4><a th:href="@{/view-by-categories?rentTypes=Hotel}" th:text="Hotel"></a>
+                                <h4 id="textCenter"><a th:href="@{/view-by-categories?rentTypes=Hotel}" th:text="Hotel"></a>
                                 </h4>
                              
                            </div>
@@ -126,7 +126,7 @@
                             </a>
                             <div class="caption">
                                 
-                                <h4><a th:href="@{/view-by-categories?rentTypes=Flat}" th:text="Flat"></a>
+                                <h4 id="textCenter"><a th:href="@{/view-by-categories?rentTypes=Flat}" th:text="Flat"></a>
                                 </h4>
                              
                            </div>
@@ -143,7 +143,7 @@
                             </a>
                             <div class="caption">
                                 
-                                <h4><a th:href="@{/view-by-categories?rentTypes=Garage}" th:text="Garage"></a>
+                                <h4 id="textCenter"><a th:href="@{/view-by-categories?rentTypes=Garage}" th:text="Garage"></a>
                                 </h4>
                              
                            </div>
@@ -160,7 +160,7 @@
                             </a>
                             <div class="caption">
                                 
-                                <h4><a th:href="@{/view-by-categories?rentTypes=Factory}" th:text="Factory"></a>
+                                <h4 id="textCenter"><a th:href="@{/view-by-categories?rentTypes=Factory}" th:text="Factory"></a>
                                 </h4>
                              
                            </div>
@@ -178,7 +178,7 @@
                             </a>
                             <div class="caption">
                                 
-                                <h4><a th:href="@{/view-by-categories?rentTypes=Plot}" th:text="Plot"></a>
+                                <h4 id="textCenter"><a th:href="@{/view-by-categories?rentTypes=Plot}" th:text="Plot"></a>
                                 </h4>
                              
                            </div>
@@ -195,7 +195,7 @@
                             </a>
                             <div class="caption">
                                 
-                                <h4><a th:href="@{/view-by-categories?rentTypes=Commercial-space}" th:text="Commercial-space"></a>
+                                <h4 id="textCenter"><a th:href="@{/view-by-categories?rentTypes=Commercial-space}" th:text="Commercial-space"></a>
                                 </h4>
                              
                            </div>
@@ -213,7 +213,7 @@
                             </a>
                             <div class="caption">
                                 
-                                <h4><a th:href="@{/view-by-categories?rentTypes=Others}" th:text="Others"></a>
+                                <h4 id="textCenter"><a th:href="@{/view-by-categories?rentTypes=Others}" th:text="Others"></a>
                                 </h4>
                              
                            </div>

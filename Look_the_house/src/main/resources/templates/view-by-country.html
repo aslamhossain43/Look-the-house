@@ -10,7 +10,7 @@
 <div class="row">
 <div class=" col-xs-6 col-xs-offset-3  col-sm-6 col-sm-offset-3  col-md-6 col-md-offset-3  col-lg-6 col-lg-offset-3">
 <br>
-<h3 th:text="${heading}"></h3>
+<h3 id="textCenter" th:text="${heading}"></h3>
 <hr>
 </div>
 </div>
@@ -27,7 +27,7 @@
                             <img id="rentType" th:src="@{images/__${v.getiCode()}__.jpg}" alt=""></a>
                             <div class="caption">
                                 
-                                <h4><a th:href="@{/view-by-categories-countries(rentTypes=__${v.getRentType()}__,countries=__${v.getCountry()}__)}" th:text="${v.getRentType()}"></a>
+                                <h4 id="textCenter"><a th:href="@{/view-by-categories-countries(rentTypes=__${v.getRentType()}__,countries=__${v.getCountry()}__)}" th:text="${v.getRentType()}"></a>
                                 </h4>
                               
                             </div>

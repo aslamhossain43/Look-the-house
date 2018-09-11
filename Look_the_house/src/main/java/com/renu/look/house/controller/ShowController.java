@@ -63,6 +63,7 @@ public class ShowController {
 		LOGGER.info("get by @RequestParam : " + country);
 		model.addAttribute("heading", "Available Services");
 		model.addAttribute("title", "Viewservices");
+		
 		model.addAttribute("databycountry", addServiceRepository.findByCountry(country));
 
 		return "view-by-country";

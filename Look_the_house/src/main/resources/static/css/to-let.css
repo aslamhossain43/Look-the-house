@@ -98,9 +98,17 @@ background-color:pink;
 }
 
 #involveCountryName{
-fint-size:5vw;
+
+text-align:center;
 }
 #countryNames{
-fint-size:5vw;
-}
 
+text-align:center;
+}
+#textCenter{
+
+text-align:legt;
+text-color:black;
+letter-spacing:2px;
+word-spacing:3px;
+}

@@ -14,7 +14,7 @@
 <div th:if="${message}">
 <div class="row">
 <div class=" col-xs-8 col-xs-offset-2  col-sm-8 col-sm-offset-2  col-md-8 col-md-offset-2  col-lg-8 col-lg-offset-2 ">
-<div class="alert alert-info fade in" th:text="${message}"></div>
+<div id="textCenter" class="alert alert-info fade in" th:text="${message}"></div>
 </div>
 </div>
 </div>
@@ -22,8 +22,8 @@
         
         
               <br>
-              <div th:if="${logout}" class="alert alert-info fade in">You have been logged out successfully</div>
-			 <div th:if="${error}" class="alert alert-info fade in">Invalid username and password.</div>
+              <div id="textCenter" th:if="${logout}" class="alert alert-info fade in">You have been logged out successfully</div>
+			 <div id="textCenter" th:if="${error}" class="alert alert-info fade in">Invalid username and password.</div>
 					
               <br>
 
