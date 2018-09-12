@@ -85,7 +85,8 @@ public class ServiceController {
 	public String addService(@Valid @ModelAttribute("services") AddService services,BindingResult bindingResult,
 		    Model model,HttpServletRequest vRequest,HttpServletRequest iRequest) {
 		LOGGER.info("From Class : ServiceController,method : addService()");
-		   if (services.getId()==0L) {
+		LOGGER.info("From Class : ServiceController,method : addService(),,Getting id : "+services.getId());
+		   if (services.getId()==null) {
 			
 			new VideoFileValidator().validate(services, bindingResult);
 		    new ImageFileValidator().validate(services, bindingResult);
@@ -110,10 +111,13 @@ public class ServiceController {
 		if (!services.getiFile().getOriginalFilename().equals("")) {
 			FileUploadUtility.imageUploadFile(iRequest, services.getiFile(),services.getiCode());
 		}
-		if (services.getId()==0L) {
+		if (services.getId()==null) {
 			
 			addServiceRepository.save(services);	
-			services.setId(0L);
+			services.setId(null);
+		}else {
+			addServiceRepository.save(services);
+			
 		}
 		
 		model.addAttribute("message", "Your operation has been completed successfully !!!");
