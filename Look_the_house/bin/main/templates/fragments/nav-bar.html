@@ -37,15 +37,15 @@
             
                
                <li class="dropdown">
-                <div sec:authorize="isAuthenticated()"> 
+                <div th:each="authority:${authorityObject}" sec:authorize="isAuthenticated()"> 
                <a class="btn btn-warning dropdown-toggle" href="javascript:void(0)"
-                data-toggle="dropdown"  th:text=" ${authorityname}" >
+                data-toggle="dropdown"  th:text=" ${authority.getFirstName()+' '+authority.getLastName()}" >
               <span class="caret"></span>
                
                </a>
                <ul class="dropdown-menu">
                <li>
-              <a th:href="@{/logout}" class="btn btn-warning"> Sign out</a>
+              <a th:href="@{/logout}" class="btn btn-warning" th:text="'Log out ( '+${authority.getUsername()}+' )'"></a>
                </li>
                
                </ul>
