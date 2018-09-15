@@ -42,7 +42,7 @@ setTimeout(function(){
 
 	$('.preLoader').fadeOut("slow");
 	
-},1000);
+},2000);
 
 }
 
