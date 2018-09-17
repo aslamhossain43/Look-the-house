@@ -8,7 +8,7 @@
 <div th:replace="fragments/nav-bar :: nav-bar"></div>
 <div class="container-fluid">
 <div class="row">
-<div class=" col-xs-6 col-xs-offset-3  col-sm-6 col-sm-offset-3  col-md-6 col-md-offset-3  col-lg-6 col-lg-offset-3">
+<div class="col-sm-6 col-sm-offset-3  col-md-6 col-md-offset-3  col-lg-6 col-lg-offset-3">
 <br>
 <h3 id="textCenter" th:text="${heading}"></h3>
 <hr>
@@ -21,7 +21,7 @@
    <div class="row">
                      <div th:if="${databycountry}">
                      <div th:each="v:${databycountry}">
-                    <div class=" col-xs-4 col-sm-4  col-md-4 col-lg-4">
+                    <div class=" col-sm-4  col-md-4 col-lg-4">
                         <div class="thumbnail">
                             <a th:href="@{/view-by-categories-countries(rentTypes=__${v.getRentType()}__,countries=__${v.getCountry()}__)}">
                             <img id="rentType" th:src="@{images/__${v.getiCode()}__.jpg}" alt=""></a>

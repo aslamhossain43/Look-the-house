@@ -8,12 +8,12 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <div th:replace="fragments/nav-bar :: nav-bar"></div>
 <div class="container-fluid ">
 <div class="row">
-<div class=" col-xs-10 col-xs-offset-1  col-sm-10 col-sm-offset-1  col-md-10 col-md-offset-1  col-lg-10 col-lg-offset-1">
+<div class="col-sm-10 col-sm-offset-1  col-md-10 col-md-offset-1  col-lg-10 col-lg-offset-1">
 
 <br>
 <div th:if="${message}">
 <div class="row">
-<div class=" col-xs-8 col-xs-offset-2  col-sm-8 col-sm-offset-2  col-md-8 col-md-offset-2  col-lg-8 col-lg-offset-2">
+<div class="col-sm-8 col-sm-offset-2  col-md-8 col-md-offset-2  col-lg-8 col-lg-offset-2">
 <div id="textCenter" class="alert alert-info fade in" th:text="${message}"></div>
 </div>
 </div>
@@ -23,7 +23,7 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 
 
 <div class="row">
-<div class=" col-xs-8 col-xs-offset-2  col-sm-8 col-sm-offset-2  col-md-8 col-md-offset-2  col-lg-8 col-lg-offset-2">
+<div class="col-sm-8 col-sm-offset-2  col-md-8 col-md-offset-2  col-lg-8 col-lg-offset-2">
 <h3 id="textCenter"><i>Registration here ! You should fill up every form . </i></h3>
 </div>
 </div>
@@ -33,8 +33,8 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <form class="form-horizontal" role="form" th:object="${userform}" name="userForm" th:action="@{/registration}" method="post">
 
 <div class="form-group">
-<label for="firstname" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 control-label">First Name : </label>
-<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+<label for="firstname" class="col-sm-3 col-md-3 col-lg-3 control-label">First Name : </label>
+<div class="col-sm-7 col-md-7 col-lg-7">
 <input type="text" class="form-control" id="firstname" th:field="*{firstName}" data-ng-model="firstName" required placeholder=" Enter First Name" autocomplete="off">
  <p data-ng-show="userForm.firstName.$touched&&userForm.firstName.$invalid"><i>First name is required</i></p>
 
@@ -42,8 +42,8 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 </div>
 
 <div class="form-group">
-<label for="lastname" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 control-label">Last Name : </label>
-<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+<label for="lastname" class="col-sm-3 col-md-3 col-lg-3 control-label">Last Name : </label>
+<div class="col-sm-7 col-md-7 col-lg-7">
 <input type="text" class="form-control" id="lastname" th:field="*{lastName}" data-ng-model="lastName" required placeholder=" Enter Last Name" autocomplete="off">
 <p data-ng-show="userForm.lastName.$touched&&userForm.lastName.$invalid"><i>Last name is required</i></p>
 
@@ -51,8 +51,8 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 </div>
 
 <div class="form-group">
-<label for="email" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 control-label">Email : </label>
-<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+<label for="email" class="col-sm-3 col-md-3 col-lg-3 control-label">Email : </label>
+<div class="col-sm-7 col-md-7 col-lg-7">
 <input type="email" class="form-control" id="email" th:field="*{username}" data-ng-model="username" required placeholder=" Enter Email" autocomplete="off">
 <p data-ng-show="userForm.username.$touched&&userForm.username.$invalid"><i>Email is required</i></p>
 
@@ -60,8 +60,8 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 </div>
 
 <div class="form-group">
-<label for="password" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 control-label">Password : </label>
-<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+<label for="password" class="col-sm-3 col-md-3 col-lg-3 control-label">Password : </label>
+<div class="col-sm-7 col-md-7 col-lg-7">
 <input type="password" class="form-control" id="password" th:field="*{password}" data-ng-model="password" required placeholder=" Enter Password" autocomplete="off">
 <p data-ng-show="userForm.password.$touched&&userForm.password.$invalid"><i>Password is required</i></p>
 
@@ -71,8 +71,8 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 
 
 <div class="form-group">
-<label for="confirmpassword" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 control-label">Confirm Password</label>
-<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+<label for="confirmpassword" class="col-sm-3 col-md-3 col-lg-3 control-label">Confirm Password</label>
+<div class="col-sm-7 col-md-7 col-lg-7">
 <input type="password" class="form-control" id="confirmpassword" th:field="*{confirmPassword}" data-ng-model="confirmPassword" required placeholder=" Enter Confirm Password" autocomplete="off">
 <p data-ng-show="userForm.confirmPassword.$touched&&userForm.confirmPassword.$invalid"><i>Confirm password is required</i></p>
 
@@ -81,8 +81,8 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 
 
 <div class="form-group">
-<label for="word" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 control-label">Write some characters(10-50) and mind it for security : </label>
-<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+<label for="word" class="col-sm-3 col-md-3 col-lg-3 control-label">Write some characters(10-50) and mind it for security : </label>
+<div class="col-sm-7 col-md-7 col-lg-7">
 <input type="text" class="form-control" id="word" th:field="*{word}" data-ng-model="word" required 
 placeholder=" Enter some characters(10-50) and mind it  for security " autocomplete="off">
 <p data-ng-show="userForm.word.$touched&&userForm.word.$invalid"><i>some characters(10-50) is required</i></p>
@@ -92,8 +92,8 @@ placeholder=" Enter some characters(10-50) and mind it  for security " autocompl
 </div>
 
 <div class="form-group">
-<label for="country" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 control-label">Country : </label>
-<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+<label for="country" class="col-sm-3 col-md-3 col-lg-3 control-label">Country : </label>
+<div class="col-sm-7 col-md-7 col-lg-7">
 <input type="text" class="form-control" id="country" th:field="*{country}" data-ng-model="country" required placeholder=" Enter Country Name" autocomplete="off">
 <p data-ng-show="userForm.country.$touched&&userForm.country.$invalid"><i>Country is required</i></p>
 
@@ -102,8 +102,8 @@ placeholder=" Enter some characters(10-50) and mind it  for security " autocompl
 
 
 <div class="form-group">
-<label for="detailaddress" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 control-label">Detail Address : </label>
-<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+<label for="detailaddress" class="col-sm-3 col-md-3 col-lg-3 control-label">Detail Address : </label>
+<div class="col-sm-7 col-md-7 col-lg-7">
 <textarea class="form-control" id="detailaddress" th:field="*{detailAddress}" data-ng-model="detailAddress" required placeholder=" Enter Detail Address" autocomplete="off"></textarea>
 <p data-ng-show="userForm.detailAddress.$touched&&userForm.detailAddress.$invalid"><i>Detail Address is required</i></p>
 
@@ -116,8 +116,8 @@ placeholder=" Enter some characters(10-50) and mind it  for security " autocompl
 
 
 	<div class="form-group">
-		<label class="control-label col-xs-3 col-sm-3 col-md-3 col-lg-3">Select Role :</label>
-		<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+		<label class="control-label col-sm-3 col-md-3 col-lg-3">Select Role :</label>
+		<div class="col-sm-7 col-md-7 col-lg-7">
 			<label sec:authorize="hasAuthority('ADMIN')" class="checkbox-inline">
 			<input type="checkbox" th:field="*{roles}"  value="ADMIN"/>Admin 				
 			</label>
@@ -130,7 +130,7 @@ placeholder=" Enter some characters(10-50) and mind it  for security " autocompl
 	</div> 	
 
 <div class="forn-group">
-<div class="col-xs-2 col-xs-offset-6  col-sm-2 col-sm-offset-6  col-md-2 col-md-offset-6  col-lg-2 col-lg-offset-6">
+<div class="col-sm-2 col-sm-offset-6  col-md-2 col-md-offset-6  col-lg-2 col-lg-offset-6">
 <button type="submit" data-ng-disabled="userForm.firstName.$touched&&userForm.firstName.$invalid
 ||userForm.lastName.$touched&&userForm.lastName.$invalid
 ||userForm.username.$touched&&userForm.username.$invalid
@@ -142,8 +142,8 @@ placeholder=" Enter some characters(10-50) and mind it  for security " autocompl
 ||userForm.roles.$touched&&userForm.roles.$invalid" class="btn btn-primary">Submit</button>
 </div>
 </div>
-
-<h5><i><a class="col-xs-2 col-xs-offset-8  col-sm-2 col-sm-offset-8  col-md-2 col-md-offset-8  col-lg-2 col-lg-offset-8" th:href="@{/login}"> Login Directly ?</a></i></h5>
+<br><br>
+<h5><i><a class="col-sm-2 col-sm-offset-8  col-md-2 col-md-offset-8  col-lg-2 col-lg-offset-8" th:href="@{/login}"> Login Directly ?</a></i></h5>
 
 
 
