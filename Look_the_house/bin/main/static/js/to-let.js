@@ -93,8 +93,21 @@ if(table.length){
 		
 		
 	  },
-	  
-	  
+	  {
+		  
+		  data:'id',
+		  mRender:function(data){
+			  				
+			  var str='';
+			
+						
+			  str+='<a href="/map?id='+data+'" id="gmapjs" class="btn btn-primary"><span class="glyphicon glyphicon-map-marker ">Google Maps</span></a>';
+                	return str;
+					
+		  }
+		  
+	  }
+	  ,
 	  {
 		  data:'rentType'
 		 
@@ -159,7 +172,6 @@ if(table.length){
 		  }
 		 
 	  }
-	  
   ]
 	
 	
@@ -199,6 +211,6 @@ $("#b").click(function() {
 	$("p").fadeToggle();
 });	
 
-
+/*google map*/
 
 

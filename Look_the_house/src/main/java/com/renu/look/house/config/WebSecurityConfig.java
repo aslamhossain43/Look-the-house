@@ -44,7 +44,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.permitAll();
 		http.authorizeRequests().antMatchers("/delete/**", "/updateAddservice/**").hasAuthority("ADMIN");
 		http.authorizeRequests().antMatchers("/user/**").hasAuthority("USER");
-		http.authorizeRequests().antMatchers("/updateAddserviceByUser/**","/update-word/**", "/showAddservice/**","/view-services/**").hasAnyAuthority("ADMIN","USER")
+		http.authorizeRequests().antMatchers("/updateAddserviceByUser/**","/update-word/**", "/showAddservice/**","/view-services/**","/map/**").hasAnyAuthority("ADMIN","USER")
 		.anyRequest().authenticated().and()
 				.formLogin().loginPage("/login").successHandler(new CustomAuthenticationSuccess())
 				.failureHandler(new CustomAuthenticationFailure()).permitAll().and().logout().permitAll().and()

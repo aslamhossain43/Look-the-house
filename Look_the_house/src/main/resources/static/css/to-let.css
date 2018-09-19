@@ -33,6 +33,10 @@ margin-left:15px;
 margin-top:20px;
 margin-bottom:20px;
 }
+#gmapjs{
+margin-left:5px;
+margin-top:50px;
+}
 /*for angular js */
 input.ng-invalid{
 background-color:pink;
@@ -112,3 +116,12 @@ text-color:black;
 letter-spacing:2px;
 word-spacing:3px;
 }
+
+/*google map*/
+#gmap{
+width:1800px;
+height:400px;
+margin:0 auto;
+display:block;
+}
+

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header-css :: header-css"></head>
+
+<body>
+<div class="preLoader">	</div> 
+<div th:replace="fragments/nav-bar :: nav-bar"></div>
+
+
+<div class="container-fluid">
+		<div class="row">
+		<div class="col-sm-12 col-sm-offset-0  col-md-12 col-md-offset-0  col-lg-12 col-lg-offset-0">
+
+<iframe id="gmap" src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d65369183.3
+6173013!2d48.89714245723693!3d19.183161360703803!3m2!1i1024!2i768!4f
+13.1!5e0!3m2!1sen!2sbd!4v1537289129502"></iframe>
+</div>
+</div>
+<div class="row">
+<h4 class="col-sm-7 col-sm-offset-3  col-md-7 col-md-offset-3  col-lg-7 col-lg-offset-3 "><b>Click 'view larger map' button on the map and search by the location below :</b> </h4>
+
+
+
+<h4 class="col-sm-7 col-sm-offset-5  col-md-7 col-md-offset-5  col-lg-7 col-lg-offset-5 " th:text="'Country : '+${ mapData.getCountry()}"></h4>
+
+<h4 class="col-sm-7 col-sm-offset-5  col-md-7 col-md-offset-5  col-lg-7 col-lg-offset-5 " th:text="'District : '+${mapData.getDistrict()}"></h4>
+
+<h4 class="col-sm-7 col-sm-offset-5  col-md-7 col-md-offset-5  col-lg-7 col-lg-offset-5 " th:text="'Sub-District : '+${mapData.getSubDistrict()}"></h4>
+
+</div>
+</div>
+
+
+<div th:replace="fragments/footer-js::footer-js"></div>
+
+
+</body>
+
+</html>
