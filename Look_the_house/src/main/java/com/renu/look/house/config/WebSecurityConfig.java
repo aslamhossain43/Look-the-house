@@ -40,11 +40,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers("/", "/register/**",
 						"/json-category/**", "/view-by-categories-countries/**", "/json-country-category/**","/show-email-word/**"
 						,"/send-email-word/**","/reset-password/**","/view-by-categories/**", "/view-by-countries/**"
-						, "/loginError", "/registration","/about/**")
+						, "/loginError", "/registration","/about/**","/map/**")
 				.permitAll();
 		http.authorizeRequests().antMatchers("/delete/**", "/updateAddservice/**").hasAuthority("ADMIN");
 		http.authorizeRequests().antMatchers("/user/**").hasAuthority("USER");
-		http.authorizeRequests().antMatchers("/updateAddserviceByUser/**","/update-word/**", "/showAddservice/**","/view-services/**","/map/**").hasAnyAuthority("ADMIN","USER")
+		http.authorizeRequests().antMatchers("/updateAddserviceByUser/**","/update-word/**", "/showAddservice/**","/view-services/**").hasAnyAuthority("ADMIN","USER")
 		.anyRequest().authenticated().and()
 				.formLogin().loginPage("/login").successHandler(new CustomAuthenticationSuccess())
 				.failureHandler(new CustomAuthenticationFailure()).permitAll().and().logout().permitAll().and()
