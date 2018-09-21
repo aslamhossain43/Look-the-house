@@ -10,3 +10,4 @@ public class LookTheHouseApplication {
 		SpringApplication.run(LookTheHouseApplication.class, args);
 	}
 }
+
