@@ -26,7 +26,7 @@ import com.renu.look.house.web.service.UserService;
 public class WebController {
 	private static final Logger LOGGER = LoggerFactory.getLogger(WebController.class);
 	@Autowired
-	User_Repository user_Repository;
+	private User_Repository user_Repository;
 	@Autowired
 	UserService userService;
 
@@ -71,7 +71,8 @@ public class WebController {
 		return "admin-registration";
 	}
 
-	@RequestMapping(value = "/adminregistration", method = RequestMethod.POST)
+	
+	@RequestMapping(value = "/adminregistration", method = {RequestMethod.POST,RequestMethod.GET})
 	public String adminRegistration(@Valid @ModelAttribute("userform") User userform, BindingResult bindingResult,
 			Model model, String[] roles) {
 		LOGGER.info("From class : WebController, method : registration()");
@@ -89,10 +90,22 @@ public class WebController {
 			return "admin-registration";
 		}
 
-		userService.saveUser(userform, roles);
-		securityService.autologin(userform.getUsername(), password);
-		model.addAttribute("message", "Your Registration has been completed successfully !!!");
-		return "admin-registration";
+		//can't retrieve values by digits
+				User user1=user_Repository.getByUsername(userform.getUsername());
+				
+					if(user1!=null) {
+	            	  model.addAttribute("message", "This email is already exist !!!");
+	          		return "admin-registration";
+	          				
+				}
+				else {
+						
+				userService.saveUser(userform, roles);
+				securityService.autologin(userform.getUsername(), password);
+				model.addAttribute("message", "Your Registration has been completed successfully !!!");
+				return "admin-registration";
+					}
+				
 
 	}
 
@@ -104,14 +117,13 @@ public class WebController {
 		return "sec-registration";
 	}
 
-	@RequestMapping(value = "/registration", method = RequestMethod.POST)
-	public String registration(@Valid @ModelAttribute("userform") User userform, BindingResult bindingResult,
-			Model model, String[] roles) {
+	@RequestMapping(value = "/registration",method= {RequestMethod.POST,RequestMethod.GET})
+	public String registration(@Valid @ModelAttribute("userform") User userform
+			, BindingResult bindingResult,Model model, String[] roles) {
 		LOGGER.info("From class : WebController, method : registration()");
 		LOGGER.info("Getting password : " + userform.getPassword());
 		LOGGER.info("Getting confirmPassword : " + userform.getConfirmPassword());
-		LOGGER.info("Getting phone from model " + userform.getPhone());
-
+		
 		if (bindingResult.hasErrors()) {
 			model.addAttribute("message", "Your Registration has not been completed successfully !!!");
 			return "sec-registration";
@@ -122,13 +134,25 @@ public class WebController {
 			model.addAttribute("message", "Your password and confirm password is not equal !!! ");
 			return "sec-registration";
 		}
-
+		//can't retrieve values by digits
+		User user1=user_Repository.getByUsername(userform.getUsername());
+		
+		if(user1!=null) {
+        	  model.addAttribute("message", "This email is already exist !!!");
+      		return "sec-registration";
+      				
+		}
+		
+		else {
+				
 		userService.saveUser(userform, roles);
 		securityService.autologin(userform.getUsername(), password);
 		model.addAttribute("message", "Your Registration has been completed successfully !!!");
 		return "sec-registration";
-
+		}
+			
 	}
+	
 
 	@RequestMapping("/admin")
 	public String admin() {

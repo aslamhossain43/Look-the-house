@@ -23,7 +23,6 @@ public class User extends BaseUser<Long> {
   private String firstName;
   private String lastName;
   private String username;
-  private String phone;
   private String password;
   @Transient
   private String confirmPassword;
@@ -74,13 +73,6 @@ public void setUsername(String username) {
 }
 
 
-
-public String getPhone() {
-	return phone;
-}
-public void setPhone(String phone) {
-	this.phone = phone;
-}
 public String getPassword() {
 	return password;
 }
