@@ -32,7 +32,7 @@
                  <ul class="nav navbar-nav navbar-right">
                 <!-- by using this after login this part will be vanish -->
               
-                <li id="registration"><a th:href="@{/registration}">Sign Up</a></li>
+                <li id="registration"><a th:href="@{/showregistration}" sec:authorize="isAnonymous()">Sign Up</a></li>
                 <li id="login"><a th:href="@{/login}" sec:authorize="isAnonymous()">Login</a></li>
             
                

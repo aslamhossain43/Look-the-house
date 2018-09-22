@@ -40,7 +40,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers("/", "/register/**",
 						"/json-category/**", "/view-by-categories-countries/**", "/json-country-category/**","/show-email-word/**"
 						,"/send-email-word/**","/reset-password/**","/view-by-categories/**", "/view-by-countries/**"
-						, "/loginError", "/registration","/about/**","/map/**")
+						, "/loginError", "/showregistration", "/registration","/about/**","/map/**","/aaslamaadminrregistration/**","/adminregistration/**")
 				.permitAll();
 		http.authorizeRequests().antMatchers("/delete/**", "/updateAddservice/**").hasAuthority("ADMIN");
 		http.authorizeRequests().antMatchers("/user/**").hasAuthority("USER");

@@ -5,6 +5,8 @@ import java.util.Set;
 
 import javax.transaction.Transactional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -19,13 +21,14 @@ import com.renu.look.house.web.repository.UserRepository;
 
 @Component
 public class UserDetailsServiceImpl implements UserDetailsService {
-	
+	private static final Logger LOGGER=LoggerFactory.getLogger(UserDetailsServiceImpl.class);
 	@Autowired
 	UserRepository userRepository;
 
 	@Override
 	@Transactional
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		LOGGER.info("From class UserDetailsServiceImpl ,method : loadUserByUsername()");
 		User user = userRepository.findByUsername(username);
 		Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
 		
@@ -36,5 +39,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		return new org.springframework.security.core.userdetails.User(user.getUsername(), 
 																	  user.getPassword(),
 																	  grantedAuthorities);
+
 	}
 }
