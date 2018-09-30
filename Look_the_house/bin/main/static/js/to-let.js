@@ -202,15 +202,3 @@ if(alert.length){
 
 
 
-
-
-
-
-$("#b").click(function() {
-	
-	$("p").fadeToggle();
-});	
-
-/*google map*/
-
-
