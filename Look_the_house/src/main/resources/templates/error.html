@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header-css :: header-css"></head>
+
+<body>
+<div class="preLoader">	</div> 
+<div th:replace="fragments/nav-bar :: nav-bar"></div>
+	
+	<div class="container-fluid">
+		<div class="row">
+		  <div class=" col-sm-8 col-sm-offset-2  col-md-8 col-md-offset-2  col-lg-8 col-lg-offset-2 ">
+         <br><br><br><br>
+		<a th:href="@{/}"> <img id="errorImage" class="img-responsive"
+							th:src="@{images/error.jpg}" alt="">
+			</a>
+				 
+		</div>	
+		</div>
+	</div>
+<div th:replace="fragments/footer-js::footer-js"></div>
+
+</body>
+
+</html>
