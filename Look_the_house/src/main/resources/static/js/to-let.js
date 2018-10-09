@@ -65,7 +65,9 @@ if(table.length){
 	  
   },
   columns : [
-	  
+	  {
+		data:'id'  
+	  },
 	  {
 		data:'vCode',
 		mRender:function(data){
@@ -156,10 +158,9 @@ if(table.length){
 					if (userRole=='ADMIN') {
 						
 			  str+='<a href="/updateAddservice?id='+data+'" id="editTrauncate" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></a>';
-                
-						
-					str+='<a href="/delete?id='+data+'" id="editTrauncate" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>';
-					return str;
+			    
+			  str+='<button id="editTrauncate" class="btn btn-primary tag_cnt btn btn-danger"  onclick="showServiceModal('+data+')" type="button" value="1"><span class="glyphicon glyphicon-trash"></span></button>';
+				return str;
 					}if (userRole=='USER') {
 						  str+='<a href="/showUpdateWordByUser?id='+data+'" id="editTrauncate" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></a>';
 				             
@@ -199,6 +200,15 @@ if(alert.length){
 	
 }
 
+/*bootstrap modal*/
+/*for tutor*/
+function showServiceModal(data)
+{
+   //you can do anything with data, or pass more data to this function. i set this data to modal header for example
+	 $('.serviceDeleteByAdmin').attr('href','/delete?id='+data);
+	$("#myServiceModal .serviceDeleteId").html(data)
+   $("#myServiceModal").modal();
+}
 
 
 

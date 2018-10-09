@@ -129,3 +129,15 @@ display:block;
 margin-top:8px;
 
 }
+
+#modalTextCenter{
+ text-align: center;
+
+}
+.modal-header{
+background-color:blue;
+}
+.modal-footer{
+background-color:orange;
+}
+
