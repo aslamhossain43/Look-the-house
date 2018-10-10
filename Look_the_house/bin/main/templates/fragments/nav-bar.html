@@ -15,7 +15,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav navbar-left">
-                    <li id="home"><a th:href="@{/}">Home</a>
+                    <li id="home"><a th:href="@{/}"><span class="glyphicon glyphicon-home"></span> Home</a>
                     </li>
                      <li id="about"><a th:href="@{/about}">About</a>
                     </li>
@@ -32,8 +32,8 @@
                  <ul class="nav navbar-nav navbar-right">
                 <!-- by using this after login this part will be vanish -->
               
-                <li id="registration"><a th:href="@{/showregistration}" sec:authorize="isAnonymous()">Sign Up</a></li>
-                <li id="login"><a th:href="@{/login}" sec:authorize="isAnonymous()">Login</a></li>
+                <li id="registration"><a th:href="@{/showregistration}" sec:authorize="isAnonymous()"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li id="login"><a th:href="@{/login}" sec:authorize="isAnonymous()"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
             
                
                <li id="fullNameInNavBar" class="dropdown">
