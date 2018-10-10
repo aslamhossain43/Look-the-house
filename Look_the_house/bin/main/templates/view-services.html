@@ -60,7 +60,8 @@
 <thead>
 
 <tr>
-<th>ID</th>
+<th th:if="${role}=='ADMIN'">ID</th>
+<th th:if="${role}=='USER'"></th>
 <th>Videos</th>
 <th>Images</th>
 <th>Google map</th>
