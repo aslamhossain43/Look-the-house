@@ -64,7 +64,7 @@ public class WebController {
 		return "sec-login";
 	}
 
-	@RequestMapping(value = "/aaslamaadminrregistration")
+	@RequestMapping(value = "/aassllaamm")
 	public String adminRegistration(Model model) {
 		model.addAttribute("userform", new User());
 		model.addAttribute("title", "Registration");
