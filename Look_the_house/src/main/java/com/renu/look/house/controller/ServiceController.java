@@ -101,6 +101,7 @@ public class ServiceController {
 		String email=authentication.getName();
 		User user=user_Repository.getByUsername(email);
 		LOGGER.info("Getting email : "+email);
+		//to update actual user must be logged in 
 		if (!services.getWord().equals(user.getWord())) {
 			model.addAttribute("message","Your characters or symbol not matching which you added during registration !");
 		return "add-services";
@@ -116,6 +117,11 @@ public class ServiceController {
 			addServiceRepository.save(services);	
 			services.setId(null);
 		}else {
+			AddService getById=addServiceRepository.getById(services.getId());
+			String getVcode=getById.getvCode();
+			String getIcode=getById.getiCode();
+			services.setvCode(getVcode);
+			services.setiCode(getIcode);
 			addServiceRepository.save(services);
 			
 		}

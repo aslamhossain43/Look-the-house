@@ -1,11 +1,14 @@
 package com.renu.look.house.controller;
 
 import java.io.File;
+import java.util.Collection;
 import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -72,6 +75,11 @@ public class JsonConroller {
 		model.addAttribute("heading", "Available Services");
 		model.addAttribute("title", "Viewservices");
 		model.addAttribute("jsonurl", "/viewServices");
+		 Collection<SimpleGrantedAuthority>authorities=(Collection<SimpleGrantedAuthority>) SecurityContextHolder.getContext().getAuthentication().getAuthorities();
+			
+			String role=authorities.toString().replace("[","").replace("]","") ;
+			LOGGER.info("From class:ShowController,,method : viewServices(), authority : "+role);
+			model.addAttribute("role",role );
 		return "view-services";
 	}
 

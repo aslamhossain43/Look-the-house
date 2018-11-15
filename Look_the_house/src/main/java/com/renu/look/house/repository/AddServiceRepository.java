@@ -12,6 +12,8 @@ import com.renu.look.house.models.AddService;
 public interface AddServiceRepository extends JpaRepository<AddService, Long>,JpaSpecificationExecutor<AddService>{
 	//get by name
 	public AddService findByWord(String word);
+	//getById
+	public AddService getById(Long id);
 	//get all services
 	@Query("FROM AddService")
 	public List<AddService>getServicesTable();
